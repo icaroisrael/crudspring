@@ -1,10 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<form th:object="${dados}" method="POST" action="/cadastro">
+    <label>Matricula:</label>
+    <input type="text" th:field="*{matricula}" readonly="readonly">
+    <label>Nome:</label>
+    <input type="text" th:field="*{nome}">
+    <label>idade:</label>
+    <input type="text" th:field="*{idade}">
+    <input type="submit" value="Editar">
+</form>
 </body>
 </html>
